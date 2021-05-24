@@ -3,7 +3,6 @@
     "maxBackupCount": "5",
     "maxBackupFileSize": "5",
     "maxAgeForBackupFiles": "5",
-    "mySQLDSN": "root@tcp(localhost:3306)/db_users",
-    "mongoDSN" : "mongodb://localhost:27017",
+    "mongoDSN" : "mongodb://mongodb:27017",
 	"db" : "db_users_mgt"
 }

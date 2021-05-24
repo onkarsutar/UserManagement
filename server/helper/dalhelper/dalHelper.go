@@ -42,7 +42,15 @@ func GetSQLConnection() (*dbr.Connection, error) {
 func GetMongoClient() (*mongo.Client, error) {
 	mongoOnce.Do(func() {
 		clientOptions := options.Client().ApplyURI(confighelper.GetConfig("mongoDSN"))
-		client, err := mongo.Connect(context.TODO(), clientOptions)
+
+		client, err := mongo.NewClient(clientOptions)
+		if err != nil {
+			clientInstanceError = err
+		}
+		ctx, cancel := context.WithTimeout(context.Background(), 3*time.Minute)
+		defer cancel()
+
+		client.Connect(ctx)
 		if err != nil {
 			clientInstanceError = err
 		}

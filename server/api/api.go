@@ -27,7 +27,7 @@ func Init(e *echo.Echo) {
 	user.Init(o, r)
 
 	e.GET("/", RootRoute)
-	e.GET("/checkststus", CheckStatusRoute)
+	e.GET("/checkstatus", CheckStatusRoute)
 }
 
 // RootRoute : Entrypoint to API server.
