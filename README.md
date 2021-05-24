@@ -7,6 +7,8 @@
 A little intro about the installation. 
 
 $ git clone https://github.com/onkarsutar/UserManagement.git
+$ cd ../UserManagement
+$ go mod download
 $ cd ../UserManagement/server/server.go
 $ go run server.go
 
